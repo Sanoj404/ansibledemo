@@ -1,0 +1,17 @@
+---
+ - name: install httpd in centos 7
+   hosts: all
+   become: true
+   task:
+    - name: install httpd
+        yum:
+         name: httpd
+         state: present
+      notify: restart httpd
+   handler: 
+    - name: restart httpd service
+        service: 
+          name: httpd
+          state: restarted
+...          
+     
