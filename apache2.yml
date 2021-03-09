@@ -7,13 +7,5 @@
       yum:
         name: "httpd"
         state: "absent"
-    - name: Start Apache server
-      service:
-        name: httpd
-        state: started
-        enabled: False
-    - name: Deploy static website
-      copy:
-        src: index.html
-        dest: /var/www/html/
+   
 ...
